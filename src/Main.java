@@ -67,7 +67,13 @@ public class Main {
 
         for (int i = 0; i < numbers.length; i++) {
 
+            if (i==numbers.length-1){
+                message += numbers[i];
+            }else{
                 message += numbers[i] + " ";
+            }
+
+              
             }
         
         return message;
