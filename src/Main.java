@@ -1,19 +1,23 @@
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.FileReader;
 import java.io.IOException;
-import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
-import java.text.DecimalFormat;
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collection;
 
 //BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
 public class Main {
 
     public static void main(String[] args) throws IOException {
-        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        //BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        BufferedReader br = new BufferedReader(new FileReader("input.txt"));
+        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+        //BufferedWriter bw = new BufferedWriter(new FileWriter("output.txt"));
+        
+
         int n = Integer.parseInt(br.readLine());
         String line;
 
@@ -24,8 +28,9 @@ public class Main {
             message += sort(line) + "\n";
 
         }
-        System.out.println(message);
-
+        bw.write(message);
+        bw.flush();
+        bw.close();
         br.close();
 
     }
@@ -69,10 +74,10 @@ public class Main {
         }
 
         for (int i = 0; i < numbers.length; i++) {
-            message += numbers[i] + " ";
 
-        }
-
+                message += numbers[i] + " ";
+            }
+        
         return message;
     }
 
