@@ -7,16 +7,12 @@ import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.util.ArrayList;
 
-//BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
 public class Main {
 
     public static void main(String[] args) throws IOException {
-        //BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         BufferedReader br = new BufferedReader(new FileReader("input.txt"));
         BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
-        //BufferedWriter bw = new BufferedWriter(new FileWriter("output.txt"));
-        
 
         int n = Integer.parseInt(br.readLine());
         String line;
@@ -45,8 +41,6 @@ public class Main {
         }
 
         bubbleSort(numbers, counters);
-        // System.out.println(Arrays.toString(numbers));
-        // System.out.println(counters.toString());
 
         double prom = 0;
 
@@ -55,8 +49,6 @@ public class Main {
         }
         prom = prom / counters.size();
 
-
-        //System.out.println(prom);
 
         BigDecimal formatNumber = new BigDecimal(prom);
         formatNumber = formatNumber.setScale(2, RoundingMode.DOWN);
